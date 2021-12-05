@@ -44,7 +44,6 @@ class ContactForm extends Component {
             id={this.nameInputId}
           />
         </label>
-        <button type="submit">Add contact</button>
 
         <label htmlFor={this.numberInputId}>
           <input
@@ -58,7 +57,7 @@ class ContactForm extends Component {
             id={this.numberInputId}
           />
         </label>
-        <button type="submit">Add number</button>
+        <button type="submit">Add contact</button>
       </form>
     );
   }

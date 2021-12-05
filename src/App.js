@@ -18,13 +18,18 @@ class App extends Component {
   };
 
   addContact = (name, number) => {
+    const { contacts } = this.state;
+    if (contacts.find((contact) => contact.name === name)) {
+      alert(name + " is already in contacts");
+      return;
+    }
     const newContact = {
       id: shortid.generate(),
       name,
       number,
     };
     this.setState(() => ({
-      contacts: [newContact, ...this.state.contacts],
+      contacts: [newContact, ...contacts],
     }));
   };
 
