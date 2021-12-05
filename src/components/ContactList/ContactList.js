@@ -4,7 +4,7 @@ const ContactList = ({ contacts }) => (
   <ul className="ContactList">
     {contacts.map((cont) => (
       <li className="ContactList__item" key={cont.id}>
-        {cont.name}:
+        {cont.name}: {cont.number}
       </li>
     ))}
   </ul>
