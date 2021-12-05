@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import shortid from "shortid";
+import "./ContactForm.css";
 
 class ContactForm extends Component {
   state = { name: "", number: "" };
+
   nameInputId = shortid.generate();
   numberInputId = shortid.generate();
 
@@ -31,9 +33,10 @@ class ContactForm extends Component {
   render() {
     return (
       <form className="Phonebook" onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>
+        <label htmlFor={this.nameInputId} className="Phonebook__label">
           Name
           <input
+            className="Phonebook__input"
             type="text"
             name="name"
             value={this.state.name}
@@ -42,11 +45,14 @@ class ContactForm extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             id={this.nameInputId}
+            placeholder="John Johnson"
           />
         </label>
 
-        <label htmlFor={this.numberInputId}>
+        <label htmlFor={this.numberInputId} className="Phonebook__label">
+          Number
           <input
+            className="Phonebook__input"
             type="tel"
             name="number"
             value={this.state.number}
@@ -55,9 +61,12 @@ class ContactForm extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             id={this.numberInputId}
+            placeholder="320-320-320"
           />
         </label>
-        <button type="submit">Add contact</button>
+        <button className="Phonebook__button" type="submit">
+          Add contact
+        </button>
       </form>
     );
   }

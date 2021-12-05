@@ -58,7 +58,7 @@ class App extends Component {
     const { filter } = this.state;
     const filteredContacts = this.getFilteredContacts();
     return (
-      <div>
+      <div className="Phonebook__wrapper">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h2>Contacts </h2>
